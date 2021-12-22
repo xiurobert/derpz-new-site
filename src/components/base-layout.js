@@ -19,23 +19,13 @@ export default function Layout({children }) {
                         </a>
                     </p>
                     <p className="level-item has-text-centered">
-                        <a className="link regular-nav-item">
-                            Qualifications
-                        </a>
-                    </p>
-                    <p className="level-item has-text-centered">
                         <a className="link homepage">
                             DerpZ
                         </a>
                     </p>
                     <p className="level-item has-text-centered">
                         <a className="link regular-nav-item">
-                            Contact
-                        </a>
-                    </p>
-                    <p className="level-item has-text-centered">
-                        <a className="link regular-nav-item">
-                            Resume
+                           Resume
                         </a>
                     </p>
                     <p className="level-item has-text-centered">
