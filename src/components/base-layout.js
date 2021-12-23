@@ -3,36 +3,30 @@ import React from 'react';
 import "../styles/basestyle.scss";
 import "../styles/layout.scss";
 
-export default function Layout({children }) {
+import NavItem from "./NavItem";
+
+export default function Layout({children}) {
     return (
         <div>
             <header>
                 <nav className="navbar level">
+                    <NavItem href="#">
+                        About Me
+                    </NavItem>
+                    <NavItem>
+                        Portfolio
+                    </NavItem>
                     <p className="level-item has-text-centered">
-                        <a className="link regular-nav-item">
-                            About me
-                        </a>
-                    </p>
-                    <p className="level-item has-text-centered">
-                        <a className="link regular-nav-item">
-                            Portfolio
-                        </a>
-                    </p>
-                    <p className="level-item has-text-centered">
-                        <a className="link homepage">
+                        <a className="link homepage" href="#">
                             DerpZ
                         </a>
                     </p>
-                    <p className="level-item has-text-centered">
-                        <a className="link regular-nav-item">
-                           Resume
-                        </a>
-                    </p>
-                    <p className="level-item has-text-centered">
-                        <a className="link regular-nav-item">
-                            Links
-                        </a>
-                    </p>
+                    <NavItem>
+                        Resume
+                    </NavItem>
+                    <NavItem>
+                        Links
+                    </NavItem>
                 </nav>
             </header>
             <main>
