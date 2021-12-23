@@ -10,14 +10,14 @@ export default function Layout({children}) {
         <div>
             <header>
                 <nav className="navbar level">
-                    <NavItem href="#">
+                    <NavItem>
                         About Me
                     </NavItem>
                     <NavItem>
                         Portfolio
                     </NavItem>
                     <p className="level-item has-text-centered">
-                        <a className="link homepage" href="#">
+                        <a className="link homepage" href="/">
                             DerpZ
                         </a>
                     </p>

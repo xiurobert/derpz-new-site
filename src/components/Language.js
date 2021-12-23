@@ -5,7 +5,7 @@ class Language extends React.Component {
         return(
             <div className="language card">
                 <div className="card-content">
-                    <h4 className="subtitle is-4">{this.props.language}</h4>
+                    <h4 className="subtitle is-4">{this.props.lang}</h4>
                     <p>
                         {this.props.children}
                     </p>
