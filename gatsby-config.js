@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: "https://www.yourdomain.tld",
+        siteUrl: "https://derpz.net",
         title: "DerpZ",
     },
     plugins: [
@@ -12,6 +12,7 @@ module.exports = {
         "gatsby-transformer-sharp",
         "gatsby-plugin-fontawesome-css",
         "gatsby-plugin-styled-components",
+        "gatsby-plugin-react-helmet",
         {
             resolve: "gatsby-source-filesystem",
             options: {
