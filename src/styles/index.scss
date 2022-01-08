@@ -1,18 +1,48 @@
 body {
   color: black;
   background-color: gainsboro;
+  font-family: -apple-system-body, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+#pageWrapper {
+  position: relative;
+  min-height: 95vh;
+}
+
+#pagePush {
+  padding-bottom: 2.5rem;
 }
 
 main {
-  font-family: -apple-system-body, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   text-align: center;
   h1 {
     font-size: 2em;
     margin-bottom: 1rem;
   }
   p {
-    font-size: 1.5em;
+    font-size: 1.25em;
     width: 50%;
     margin: 0 auto;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  //display: flex;
+  //flex-direction: row;
+  //justify-content: center;
+  //align-items: center;
+}
+
+.clicky-icon-fa {
+  opacity: 0.6;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  &:hover {
+    color: #469EFF;
+    opacity: 1;
   }
 }

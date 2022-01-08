@@ -9,7 +9,7 @@ class ClickyIcon extends React.Component {
         return(
             <div className={this.props.className}>
                 <a href={this.props.url} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={this.props.icon} size="2x" color="black"/>
+                    <FontAwesomeIcon icon={this.props.icon} size="2x" color="black" className={`clicky-icon-fa`}/>
                 </a>
             </div>
         );
