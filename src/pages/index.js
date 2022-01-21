@@ -1,9 +1,9 @@
 import * as React from "react"
 
-import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
-import {faTwitter, faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import {faEnvelope, faFlask} from "@fortawesome/free-solid-svg-icons";
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 import { StaticImage } from "gatsby-plugin-image"
 import { Helmet } from "react-helmet";
@@ -50,6 +50,14 @@ const IndexPage = () => {
                         <ClickyIcon url={'mailto:robert@derpz.net'} icon={faEnvelope}/>
                         <ClickyIcon url="https://github.com/xiurobert" icon={faGithub}/>
                         <ClickyIcon url="https://linkedin.com/in/Robert-Xiu" icon={faLinkedin}/>
+                    </IconRow>
+                    <GreyHr/>
+                    <h3>Other services</h3>
+                    <p>
+                        Enter theLab: A playground for me to test things
+                    </p>
+                    <IconRow>
+                        <ClickyIcon url={'https://lab.derpz.net'} icon={faFlask}/>
                     </IconRow>
                 </main>
             </div>
