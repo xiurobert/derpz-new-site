@@ -67,7 +67,7 @@ const IndexPage = () => {
                     aspectRatio: "481/112",
                 }}/>
                 <br />
-                &copy; 2020 XRDZ Software Engineering
+                &copy; 2022 XRDZ Software Engineering
 
             </footer>
         </div>
