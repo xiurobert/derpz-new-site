@@ -59,6 +59,12 @@ const IndexPage = () => {
                     <IconRow>
                         <ClickyIcon url={'https://lab.derpz.net'} icon={faFlask}/>
                     </IconRow>
+                    <h3>
+                        Currently working on:
+                    </h3>
+                    <p>
+                        <a href={`https://github.com/xiurobert/deeptch`}>deepTCH</a> - Bad machine learning framework
+                    </p>
                 </main>
             </div>
             <footer>
