@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import {faEnvelope, faFlask} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 import styled from "styled-components";
@@ -12,6 +12,8 @@ import "../styles/index.scss";
 import ClickyIcon from "../components/ClickyIcon";
 
 import IconRow from "../components/containers/IconRow";
+import {graphql} from "gatsby";
+import Repository from "../components/Repository";
 
 const GreyHr = styled.hr`
   margin-top: 2rem;
@@ -20,17 +22,14 @@ const GreyHr = styled.hr`
   width: 75%;
 `;
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
     return (
         <div id={`pageWrapper`}>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Home | DerpZ</title>
+                <title>Home | {data.site.siteMetadata.title}</title>
             </Helmet>
             <div id={`pagePush`}>
-                {/*<header>*/}
-                {/*    <button>Dark Mode</button>*/}
-                {/*</header>*/}
                 <main>
                     <StaticImage src={`../images/profilepic.png`} alt={`DerpZ`} style={
                         {
@@ -39,7 +38,6 @@ const IndexPage = () => {
                             borderRadius: "50%",
                         }
                     }/>
-                    {/*<h1>DerpZ</h1>*/}
                     <GreyHr/>
                     <h1>Hi, I'm Robert.</h1>
                     <p>
@@ -47,25 +45,25 @@ const IndexPage = () => {
                         Please feel free to view some of my links below.
                     </p>
                     <IconRow>
-                        <ClickyIcon url={'mailto:robert@derpz.net'} icon={faEnvelope}/>
-                        <ClickyIcon url="https://github.com/xiurobert" icon={faGithub}/>
-                        <ClickyIcon url="https://linkedin.com/in/Robert-Xiu" icon={faLinkedin}/>
+                        <ClickyIcon url={`mailto:${data.site.siteMetadata.contactemail}`} icon={faEnvelope}/>
+                        <ClickyIcon url={data.githubData.data.user.url} icon={faGithub}/>
+                        <ClickyIcon url={data.site.siteMetadata.socials.linkedIn} icon={faLinkedin}/>
                     </IconRow>
                     <GreyHr/>
-                    <h3>Other services</h3>
-                    <p>
-                        Enter theLab: A playground for me to test things
-                    </p>
-                    <IconRow>
-                        <ClickyIcon url={'https://lab.derpz.net'} icon={faFlask}/>
-                    </IconRow>
                     <h3>
-                        Currently working on:
+                        Recently updated repositories
                     </h3>
-                    <p>
-                        <a href={`https://github.com/xiurobert/deeptch`}>deepTCH</a> - Bad machine learning framework
-                        <a href={`https://github.com/xiurobert/finsight`}>finSight</a> - Experiments for automatic trading and analysis of financial data
-                    </p>
+
+                    {data.githubData.data.user.repositories.edges.map(({node}) => (
+                        <Repository node={node} />
+                    ))}
+
+                    <h3>
+                        Recent contributions
+                    </h3>
+                    {data.githubData.data.user.repositoriesContributedTo.edges.map(({node}) => (
+                        <Repository node={node} />
+                    ))}
                 </main>
             </div>
             <footer>
@@ -81,5 +79,51 @@ const IndexPage = () => {
 
     )
 }
+
+export const query = graphql`
+    {
+        site {
+            siteMetadata {
+                title
+                siteUrl
+                contactemail
+                socials {
+                    linkedIn
+                }
+            }
+        }
+        githubData {
+            data {
+                user {
+                    url
+                    repositoriesContributedTo {
+                        edges {
+                            node {
+                                nameWithOwner
+                                description
+                                url
+                                stargazers {
+                                    totalCount
+                                }
+                            }
+                        }
+                    }
+                    repositories {
+                        edges {
+                            node {
+                                nameWithOwner
+                                description
+                                url
+                                stargazers {
+                                    totalCount
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
 
 export default IndexPage
