@@ -64,6 +64,7 @@ const IndexPage = () => {
                     </h3>
                     <p>
                         <a href={`https://github.com/xiurobert/deeptch`}>deepTCH</a> - Bad machine learning framework
+                        <a href={`https://github.com/xiurobert/finsight`}>finSight</a> - Experiments for automatic trading and analysis of financial data
                     </p>
                 </main>
             </div>
